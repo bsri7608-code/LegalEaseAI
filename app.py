@@ -5,7 +5,7 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 
-from utils.document_formatter import format_docx, format_html_preview, format_pdf, sanitize_text
+from document_formatter import format_docx, format_html_preview, format_pdf, sanitize_text
 
 load_dotenv()
 
