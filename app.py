@@ -10,7 +10,7 @@ from document_formatter import format_docx, format_html_preview, format_pdf, san
 load_dotenv()
 
 st.set_page_config(page_title="LegalEase", page_icon="⚖️", layout="wide")
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000").rstrip("/")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://legaleaseai-njtr.onrender.com").rstrip("/")
 
 st.markdown("""
 <style>
