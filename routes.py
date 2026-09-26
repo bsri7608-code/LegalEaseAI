@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field, field_validator
 
-from backend.ai_core.gemini_generator import GeminiDocumentGenerator
+from gemini_generator import GeminiDocumentGenerator
 
 router = APIRouter()
 
