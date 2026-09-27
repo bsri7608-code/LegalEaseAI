@@ -14,8 +14,11 @@ class GeminiDocumentGenerator:
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.model = model or os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+
         if not self.api_key:
-            raise ValueError("GEMINI_API_KEY is not configured. Add it to .env.")
+            raise ValueError(
+                "GEMINI_API_KEY is not configured. Add it to .env."
+            )
 
         self.client = genai.Client(
             api_key=self.api_key,
@@ -81,4 +84,13 @@ Requirements:
         if not text:
             raise RuntimeError("Gemini returned an empty response.")
 
-        return text.strip()
+        # Clean Markdown formatting from the generated legal document
+        cleaned_text = (
+            text.strip()
+            .replace("### ", "")
+            .replace("###", "")
+            .replace("**", "")
+            .replace("---", "")
+        )
+
+        return cleaned_text
