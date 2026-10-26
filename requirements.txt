@@ -8,3 +8,4 @@ google-genai==1.31.0
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
 pydantic==2.11.7
+certifi>=2026.10.19
